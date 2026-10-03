@@ -12,4 +12,4 @@ lib/
         └── nome_da_lib.cpp
 ```
 
-Libs sem `#include <Arduino.h>` podem ser testadas no PC com `pio test -e native`.
+Libs que não dependem da placa nem do framework (ex: Arduino) podem ser testadas no PC com `pio test -e native`.

@@ -1,11 +1,11 @@
 # Drone GER
 
-Quadricóptero do grupo de robótica. Voo por **Betaflight**; o que construímos: controle, link de rádio, estação no PC e, depois, vídeo + visão computacional.
+Quadricóptero do grupo de robótica. Voo por **Betaflight**. Microcontrolador e rádio do link ainda **a definir**. O que construímos: controle, link de rádio, estação no PC e, depois, vídeo + visão computacional.
 
 ## Arquitetura
 
 ```
-[Controle ESP32] --ESP-NOW--> [ESP32 no drone] --CRSF--> [FC Betaflight]
+[Controle (MCU)] --rádio--> [MCU no drone] --CRSF--> [FC Betaflight]
        |  <---- telemetria ----
       USB
        v
@@ -27,11 +27,11 @@ Código compartilhado entre os projetos PlatformIO: `firmware/lib/` (via `lib_ex
 
 ## Fases
 
-0. Setup: PlatformIO instalado, blink no ESP32, fluxo de Git combinado.
+0. Setup: PlatformIO instalado, microcontrolador e rádio escolhidos, blink na placa, fluxo de Git combinado.
 1. Protocolo no papel (`protocol/`) + simulador do link (`sim/`) — sem hardware.
-2. Link real: 2 ESP32 trocando pacotes; medir latência, perda, alcance. Failsafe.
+2. Link real: controle e drone trocando pacotes pelo rádio; medir latência, perda, alcance. Failsafe.
 3. Controle físico: joysticks, calibração.
-4. Bancada: ESP32 → CRSF → Betaflight, motores **sem hélice**.
+4. Bancada: MCU do drone → CRSF → Betaflight, motores **sem hélice**.
 5. Primeiro voo, área aberta, failsafe testado antes.
 6. Vídeo: Pi + câmera → PC; OpenCV.
 

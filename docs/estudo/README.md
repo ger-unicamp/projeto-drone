@@ -10,13 +10,13 @@ Tópicos em ordem sugerida. Cada um vira uma issue de estudo; anotações de que
 ## 2. Embarcados básicos
 - GPIO, ADC, timers, interrupções, `millis()` vs `delay()`, loop não bloqueante.
 - UART, I2C, SPI: diferenças, quando usar cada.
-- Refs: [Arduino-ESP32 docs](https://docs.espressif.com/projects/arduino-esp32/en/latest/) · [SparkFun: Serial](https://learn.sparkfun.com/tutorials/serial-communication), [I2C](https://learn.sparkfun.com/tutorials/i2c), [SPI](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi) · livro *Making Embedded Systems* (Elecia White)
+- Refs: [SparkFun: Serial](https://learn.sparkfun.com/tutorials/serial-communication), [I2C](https://learn.sparkfun.com/tutorials/i2c), [SPI](https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi) · livro *Making Embedded Systems* (Elecia White)
 
-## 3. Rádio 2.4 GHz e ESP-NOW
+## 3. Rádio e opções de link
 - Faixa 2.4 GHz, canais Wi-Fi, interferência, RSSI, alcance, antenas.
-- ESP-NOW: pareamento, broadcast vs unicast, limite de payload, callbacks, criptografia.
-- Comparar alternativas: nRF24L01, ExpressLRS, LoRa (por que não usamos).
-- Refs: [ESP-IDF: ESP-NOW](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/network/esp_now.html) · [Random Nerd Tutorials: ESP-NOW](https://randomnerdtutorials.com/esp-now-esp32-arduino-ide/) · [ExpressLRS docs](https://www.expresslrs.org)
+- Opções: ESP-NOW (ESP32), nRF24L01, ExpressLRS, LoRa.
+- Critérios: latência, alcance, payload, custo, facilidade, compatibilidade com o microcontrolador.
+- Refs: [ESP-IDF: ESP-NOW](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/network/esp_now.html) · [Random Nerd Tutorials: ESP-NOW](https://randomnerdtutorials.com/esp-now-esp32-arduino-ide/) · [nRF24 (RF24 lib)](https://nrf24.github.io/RF24/) · [ExpressLRS docs](https://www.expresslrs.org)
 
 ## 4. Protocolos binários
 - Framing (byte de sincronismo, COBS), endianness, serialização sem `struct` crua.
